@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: #F9F7F2;
+  --color-card: #FFFFFF;
+  --color-border-warm: #E5E0D5;
+  --color-sage: #3A6B52;
+  --color-sage-soft: #EEF4F0;
+  --color-terracotta: #C96A4B;
+  --color-terracotta-soft: #FBF1ED;
+  --color-ink: #243028;
+  --color-ink-muted: #5A665E;
+}
+
+@layer base {
+  html {
+    background-color: #F9F7F2;
+    color: #243028;
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: "Nunito", ui-rounded, system-ui, sans-serif;
+  }
+}
+
+@keyframes leafFadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leafScanSweep {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(340%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes resultBounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.82);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.07);
+  }
+  78% {
+    transform: translateY(1px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-leaf-fade {
+  animation: leafFadeSlideIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-leaf-scan {
+  animation: leafScanSweep 1.3s ease-in-out infinite;
+}
+
+.animate-result-bounce {
+  animation: resultBounceIn 480ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

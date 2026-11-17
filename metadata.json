@@ -1,0 +1,6 @@
+{
+  "name": "Leaf Buddy",
+  "description": "A friendly, illustrated nature field-guide app for kids and learners to check garden leaves for plant diseases and see how a CNN spots leaf edges, colors, and patterns.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
